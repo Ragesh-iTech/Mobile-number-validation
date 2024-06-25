@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Number Validation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            
+                <h2>YOUR PHONE NUMBER</h2>
+                <input type="number" name="number" id="mobile-number" placeholder="Phone Number">
+                <p id="error-msg"></p>
+                <button id="valid-btn">Submit</button>
+            
+        </div>
+    </div>
+    <script>
+        const mobileNumber = document.getElementById("mobile-number");
+        const errorMsg = document.getElementById("error-msg");
+        const button = document.getElementById("valid-btn");
+        
+        function myFunction() {
+            const numValue = mobileNumber.value; // Retrieve the value inside the function
+            if (numValue.length === 10) { // Use .length property directly
+                errorMsg.innerHTML = "successfully submit";
+                errorMsg.style.color = "green";
+                
+            } else {
+                errorMsg.innerHTML = "number must be 10 digits";
+                errorMsg.style.color = "red";
+                
+            }
+        }
+        
+        button.addEventListener("click", myFunction); // Attach the function to the button click event
+
+
+    </script>
+</body>
+</html>
